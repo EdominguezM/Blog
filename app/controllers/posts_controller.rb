@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  #http_basic_authenticate_with name: "desafiovamoscontodo", password: "XAHTJEAS23123%23", only: :dashboard
+  http_basic_authenticate_with name: "desafiovamoscontodo", password: "XAHTJEAS23123%23", only: :dashboard
   def new
     @post= Post.all.order(date: :desc)
     if params[:title].present?
