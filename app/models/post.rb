@@ -7,6 +7,8 @@ class Post < ApplicationRecord
   before_save :erase_word
 
   def erase_word
-    self.content = self[:content].split.reduce([]) { |x, value| x.push(value) if value != "spoiler." || value != "spoiler." ; x }.join(" ")
+      
+   self.content = self[:content].split.reduce([]) { |x, value| x.push(value) if value != 'spoiler'; x }.join(" ")
+
   end
 end
